@@ -4,9 +4,9 @@
 
 Pilha* pilha_cria();
 
-void pilha_push(Livro* p, Livro* lvro);
+void pilha_push(Pilha* p, Livros* lvro);
 
-float pilha_pop(Livro* p){
+float pilha_pop(Pilha* p){
 	Lista* t;
 	float v;
 	if(pilha_vazia(p)){
@@ -22,8 +22,15 @@ float pilha_pop(Livro* p){
 	
 }
 
-void pilha_busca(Livro* p);
+void pilha_busca(Pilha* p){
+	return p->prim;
+}
 
-int pilha_vazia(Livro* p);
+int pilha_vazia(Pilha* p);
 
-void menu();
+void menu(){
+	printf("1-Inserir elemento\n");
+	printf("2-Remover elemento\n");
+	printf("3-Busca elemento do topo\n");
+	printf("4-Sair");
+}

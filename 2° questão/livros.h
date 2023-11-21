@@ -6,9 +6,9 @@ typedef struct pilha Pilha;
 
 Pilha* pilha_cria();
 
-void pilha_push(Pilha* p, Livro* lvro);
+void pilha_push(Pilha* p, Livros* lvro);
 
-void pilha_pop(Pilha* p);
+Livros* pilha_pop(Pilha* p);
 
 void pilha_busca(Pilha* p);
 
