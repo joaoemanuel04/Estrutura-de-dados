@@ -20,7 +20,12 @@ Lista* lst_cria(){
 	return NULL;
 }
 
-Lista* lst_insere(Lista* l, char nome);
+Lista* lst_insere (Lista* l, char nome){
+	Lista* novo = (Lista*) malloc(sizeof(Lista));
+	novo-> info = nome;
+	novo-> prox = l;
+	return novo;
+}
 
 Lista* lst_remove(Lista* l, char nome){
 	Lista* ant= NULL;
