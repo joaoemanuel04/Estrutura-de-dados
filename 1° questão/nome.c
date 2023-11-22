@@ -3,9 +3,9 @@
 #include <string.h>
 #include "nome.h"
 
-/* a 'struct lista' - linha 11 até 14 - define uma estrutura de lista encadeada,
-onde cada nó contém um ponteiro para uma string do tipo char (info)
-e um ponteiro para o próximo nó (prox).*/
+/* a 'struct lista' define uma estrutura de lista encadeada,
+onde cada nÃ³ contÃ©m um ponteiro para uma string do tipo char (info)
+e um ponteiro para o prÃ³ximo nÃ³ (prox).*/
 typedef struct lista Lista;
 
 struct lista{
@@ -13,9 +13,9 @@ struct lista{
 	struct lista* prox;
 };
 
-/*a função lst_cria() cria uma lista vazia,
+/*a funÃ§Ã£o lst_cria() cria uma lista vazia,
 retornando um ponteiro nulo para indicar
-que não tem nenhum nó inicial na lista.*/
+que nÃ£o tem nenhum nÃ³ inicial na lista.*/
 Lista* lst_cria(){
 	return NULL;
 }
@@ -50,10 +50,9 @@ Lista* lst_buscar(Lista* l, char nome) {
 	return NULL;
 };
 
-//alterei o nome da função de lst_imprimi para lst_imprime
-/*Claro, a função lst_imprime - linha 57 até 68 - percorre uma lista encadeada
-e imprime os dados de cada nó, mostrando também a conexão entre os nós,
-indicando o próximo nó, se existir, ou que o próximo é NULL.*/
+/*a funÃ§Ã£o lst_imprime percorre uma lista encadeada
+e imprime os dados de cada nÃ³, mostrando tambÃ©m a conexÃ£o entre os nÃ³s,
+indicando o prÃ³ximo nÃ³, se existir, ou que o prÃ³ximo Ã© NULL.*/
 void lst_imprime(Lista* l){
 	Lista* p;
 	for(p=l; p!=NULL; p = p->prox){
