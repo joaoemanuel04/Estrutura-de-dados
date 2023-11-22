@@ -2,8 +2,26 @@
 #include <stdio.h>
 #include "paciente.h"
 
+struct paciente{
+    char* nome;
+    char* cpf;
+    char* plano_saude;
+    struct paciente* prox;
+};
+typedef struct paciente Paciente;
 
-Fila* fila_cria();
+struct fila {
+    Paciente* ini;
+    Paciente* fim;
+};
+typedef struct fila Fila;
+
+Fila* fila_cria(){
+	Fila* f = (Fila*)malloc(sizeof(Fila));
+    f->ini = f->fim = NULL;
+    return f;
+	
+}
 
 void insere_paciente(Fila* f, Paciente* p);
 
