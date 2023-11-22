@@ -45,8 +45,8 @@ Pilha * pilha_push(Pilha* *pil, Livros* lvro){
 	
 }
 
-void pilha_busca(Pilha* p){
-	return p->prim;
+Pilha* pilha_busca(Pilha* p){
+	return p->prim->info;
 }
 
 int pilha_vazia(Pilha* p);

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout>
 	<Files>
-		<File Name="livros.c" Top="Yes" Tabpos="1" TopLine="5">
-			<Cursor Line="10" Column="11"/>
+		<File Name="livros.c" Top="Yes" Tabpos="1" TopLine="1">
+			<Cursor Line="10" Column="38"/>
+			<Selection Line="10" Column="32"/>
 		</File>
 		<File Name="livros.h" Top="No" Tabpos="2" TopLine="1">
-			<Cursor Line="11" Column="8"/>
+			<Cursor Line="11" Column="1"/>
 		</File>
 	</Files>
 </Layout>
