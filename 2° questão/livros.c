@@ -6,18 +6,18 @@ Pilha* pilha_cria();
 
 void pilha_push(Pilha* p, Livros* lvro);
 
-float pilha_pop(Pilha* p){
+ Livros* pilha_pop(Pilha* p){
 	Lista* t;
-	float v;
+	Livros* livro;
 	if(pilha_vazia(p)){
 		printf("Pilha vazia.\n");
 		exit(1);}
-		
+ 
 		t = p->prim;
-		v = t->info;
+		livro = t->info;
 		p->prim = t->prox;
 		free(t);
-		return v;	
+		return livro;	
 	}
 	
 }
