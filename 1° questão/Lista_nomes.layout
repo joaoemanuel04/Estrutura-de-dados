@@ -4,8 +4,8 @@
 		<File Name="nome.h" Top="No" Tabpos="1" TopLine="1">
 			<Cursor Line="1" Column="1"/>
 		</File>
-		<File Name="nome.c" Top="Yes" Tabpos="2" TopLine="16">
-			<Cursor Line="13" Column="1"/>
+		<File Name="nome.c" Top="Yes" Tabpos="2" TopLine="7">
+			<Cursor Line="28" Column="2"/>
 		</File>
 	</Files>
 </Layout>

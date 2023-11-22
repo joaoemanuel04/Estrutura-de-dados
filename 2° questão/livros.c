@@ -2,7 +2,27 @@
 #include <stdio.h>
 #include "livros.h"
 
-Pilha* pilha_cria();
+struct livro {
+		char titulo [50];
+		char autor [50];
+		int codigo;
+	};
+	
+struct lista{
+		Livros * info;
+		struct lista* prox;
+	};
+	
+struct pilha{
+		Lista* prim;
+	};
+	
+Pilha* pilha_cria(void){
+	Pilha* p= (Pilha*)malloc(sizeof(Pilha));
+	p-> prim= NULL;
+	return p;
+}
+		
 
 Pilha * pilha_push(Pilha* *pil, Livros* lvro){
 	
@@ -43,7 +63,6 @@ Pilha * pilha_push(Pilha* *pil, Livros* lvro){
 		return livro;	
 	}
 	
-}
 
 Pilha* pilha_busca(Pilha* p){
 	return p->prim->info;
