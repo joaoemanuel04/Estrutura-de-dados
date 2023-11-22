@@ -6,7 +6,8 @@ typedef struct pilha Pilha;
 
 Pilha* pilha_cria();
 
-void pilha_push(Pilha* p, Livros* lvro);
+//alterei o nome da variavel do ponteiro de 'p' para 'pil'
+Pilha pilha_push(Pilha* pil, Livros* lvro);
 
 Livros* pilha_pop(Pilha* p);
 

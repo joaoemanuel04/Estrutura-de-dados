@@ -4,7 +4,30 @@
 
 Pilha* pilha_cria();
 
-void pilha_push(Pilha* p, Livros* lvro);
+Pilha * pilha_push(Pilha* *pil, Livros* lvro){
+	
+	//Alocação de memória para um novo nó da lista
+	Lista * novo = (Lista*)malloc(sizeof(Lista));
+	
+	//Alocação de memória para armazenar o nome do livro
+	char* nome = (char*) malloc(41*sizeof(char));
+	
+	//Solicitação do nome do livro ao usuário
+	printf("Digite o nome do livro: ");
+	scanf(" %40[^\n]", nome);
+	
+	/* Linha 23 e 24 = 'prim' será um membro da struct Pilha,
+	e será um ponteiro para a struct 'Lista' */
+	
+	//Atribuição do nome do livro ao novo nó
+	novo->livro = nome;
+	//Atualização dos ponteiros para inserir o novo nó na pilha
+	novo->prox = pil->prim;
+	pil->prim = novo;
+	//Retorno da pilha modificada
+	return pil;
+	
+}
 
  Livros* pilha_pop(Pilha* p){
 	Lista* t;
