@@ -6,11 +6,11 @@ typedef struct fila Fila;
 
 Fila* fila_cria();
 
-void insere_paciente(Fila* f, Paciente* p);
+Fila* fila_insere(Fila* f);
 
-Paciente* chamar_paciente(Fila* f);
+char* chamar_paciente(Fila* f);
 
-void consultar_posicao(Fila *f, Paciente* p);
+void consultar_posicao(Fila *f, char * cpf);
 
 void listar_quantidade(Fila* f);
 

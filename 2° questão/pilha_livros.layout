@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout>
 	<Files>
-		<File Name="livros.c" Top="Yes" Tabpos="1" TopLine="1">
-			<Cursor Line="10" Column="2"/>
+		<File Name="livros.h" Top="No" Tabpos="1" TopLine="1">
+			<Cursor Line="8" Column="1"/>
 		</File>
-		<File Name="livros.h" Top="No" Tabpos="2" TopLine="1">
-			<Cursor Line="11" Column="1"/>
+		<File Name="livros.c" Top="No" Tabpos="2" TopLine="1">
+			<Cursor Line="3" Column="20"/>
+		</File>
+		<File Name="codigo_livros.c" Top="Yes" Tabpos="3" TopLine="10">
+			<Cursor Line="7" Column="12"/>
 		</File>
 	</Files>
 </Layout>

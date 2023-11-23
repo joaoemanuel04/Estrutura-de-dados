@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout>
 	<Files>
-		<File Name="paciente.c" Top="Yes" Tabpos="1" TopLine="5">
-			<Cursor Line="18" Column="13"/>
+		<File Name="paciente.h" Top="No" Tabpos="1" TopLine="1">
+			<Cursor Line="17" Column="13"/>
 		</File>
-		<File Name="paciente.h" Top="No" Tabpos="2" TopLine="1">
-			<Cursor Line="11" Column="10"/>
+		<File Name="paciente.c" Top="Yes" Tabpos="2" TopLine="40">
+			<Cursor Line="71" Column="2"/>
+		</File>
+		<File Name="codigo_paciente.c" Top="No" Tabpos="3" TopLine="1">
+			<Cursor Line="48" Column="2"/>
 		</File>
 	</Files>
 </Layout>
