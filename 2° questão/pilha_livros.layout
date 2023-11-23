@@ -2,8 +2,7 @@
 <Layout>
 	<Files>
 		<File Name="livros.c" Top="Yes" Tabpos="1" TopLine="1">
-			<Cursor Line="10" Column="38"/>
-			<Selection Line="10" Column="32"/>
+			<Cursor Line="10" Column="2"/>
 		</File>
 		<File Name="livros.h" Top="No" Tabpos="2" TopLine="1">
 			<Cursor Line="11" Column="1"/>

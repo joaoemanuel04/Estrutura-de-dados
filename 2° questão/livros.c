@@ -2,20 +2,21 @@
 #include <stdio.h>
 #include "livros.h"
 
-struct livro {
-		char titulo [50];
-		char autor [50];
-		int codigo;
-	};
-	
+struct livro{
+    char titulo [50];
+    char autor [50];
+    int codigo;
+};
+
 struct lista{
-		Livros * info;
-		struct lista* prox;
-	};
+    Livro * info;
+    Lista* prox;
+};
 	
 struct pilha{
-		Lista* prim;
-	};
+    Lista* prim;
+};
+
 	
 Pilha* pilha_cria(void){
 	Pilha* p= (Pilha*)malloc(sizeof(Pilha));
@@ -24,51 +25,52 @@ Pilha* pilha_cria(void){
 }
 		
 
-Pilha * pilha_push(Pilha* *pil, Livros* lvro){
-	
-	//Alocação de memória para um novo nó da lista
+Pilha* pilha_push(Pilha* pil){
+	Livro* lvro;
+	lvro= (Livro*)malloc(sizeof(Livro));
+	printf("Digite o código do livro: ");
+	scanf("%d", &lvro->codigo);
+	printf("Digite o titulo do livro: ");
+	getchar();
+	scanf("%49[^\n]", lvro->titulo);
+	printf("Digite o autor do livro: ");
+	getchar();
+	scanf("%49[^\n]", lvro->autor);
 	Lista * novo = (Lista*)malloc(sizeof(Lista));
-	
-	//Alocação de memória para armazenar o nome do livro
-	char* nome = (char*) malloc(41*sizeof(char));
-	
-	//Solicitação do nome do livro ao usuário
-	printf("Digite o nome do livro: ");
-	scanf(" %40[^\n]", nome);
-	
-	/* Linha 23 e 24 = 'prim' será um membro da struct Pilha,
-	e será um ponteiro para a struct 'Lista' */
-	
-	//Atribuição do nome do livro ao novo nó
-	novo->livro = nome;
-	//Atualização dos ponteiros para inserir o novo nó na pilha
+	novo->info = lvro;
 	novo->prox = pil->prim;
 	pil->prim = novo;
-	//Retorno da pilha modificada
 	return pil;
 	
 }
 
- Livros* pilha_pop(Pilha* p){
+int pilha_pop(Pilha* p){
 	Lista* t;
-	Livros* livro;
+	Livro* livro;
 	if(pilha_vazia(p)){
-		printf("Pilha vazia.\n");
-		exit(1);}
- 
+		return NULL;
+	}
+	else{
 		t = p->prim;
 		livro = t->info;
 		p->prim = t->prox;
 		free(t);
-		return livro;	
-	}
+		return livro->codigo;
+	}	
+}
 	
 
-Pilha* pilha_busca(Pilha* p){
-	return p->prim->info;
+void pilha_busca(Pilha* p){
+	if(pilha_vazia(p)){
+		printf("Não possui livros.\n ");
+	}
+	else
+		printf("Código: %d\nTitulo: %s\nAutor: %s\n", p->prim->info->codigo, p->prim->info->titulo, p->prim->info->autor);
 }
 
-int pilha_vazia(Pilha* p);
+int pilha_vazia(Pilha* p){
+	return (p->prim == NULL);
+}
 
 void menu(){
 	printf("1-Inserir elemento\n");
@@ -76,3 +78,4 @@ void menu(){
 	printf("3-Busca elemento do topo\n");
 	printf("4-Sair");
 }
+
