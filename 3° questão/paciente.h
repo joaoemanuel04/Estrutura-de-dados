@@ -6,7 +6,7 @@ typedef struct fila Fila;
 
 Fila* fila_cria();
 
-Fila* fila_insere(Fila* f);
+void fila_insere(Fila* f, char* cpf);
 
 char* chamar_paciente(Fila* f);
 

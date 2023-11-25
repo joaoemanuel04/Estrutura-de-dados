@@ -5,7 +5,7 @@
 
 struct paciente{
     char nome[50];
-    char cpf[14];
+    char *cpf;
     char plano_saude[50];
 };
 
@@ -26,16 +26,17 @@ Fila* fila_cria(){
 	
 }
 
-Fila* fila_insere(Fila* f){
+void fila_insere(Fila* f, char* cpf){
+	int n= strlen(cpf);
+	char* nm= (char*)malloc(sizeof(char)*(n+1));
+	strcpy(nm, cpf);
 	Paciente* p= (Paciente*)malloc(sizeof(Paciente));
 	Lista* l=(Lista*)malloc(sizeof(Lista));
 	printf("Digite o nome do paciente: ");
 	getchar();
 	scanf("%[^\n]", p->nome);
-	printf("Digite o cpf do paciente: ");
-	getchar();
-	scanf("%[^\n]", p->cpf);
-	printf("Digite o plano de saúde do paciente: ");
+	p->cpf= nm;
+	printf("Digite o plano de saude do paciente: ");
 	getchar();
 	scanf("%[^\n]", p->plano_saude);
 	l->info= p;
@@ -45,7 +46,6 @@ Fila* fila_insere(Fila* f){
 	else
 		f->ini= l;
 	f->fim= l;
-	return f;
 }
 
 char* chamar_paciente(Fila* f){
@@ -64,17 +64,45 @@ char* chamar_paciente(Fila* f){
 }
 
 void consultar_posicao(Fila *f, char* cpf){
+	if(f->ini == NULL)
+	 	 printf("Nao tem paciente.");
+    else{
+		Lista* t= f->ini;
+		Lista* veri_cpf= f->ini;
+		int veri=0;
+		int cont=1;
+		while(veri_cpf != NULL){
+			if(strcmp(veri_cpf->info->cpf, cpf)==0){
+				veri= 1;
+				break;
+			}
+			veri_cpf= veri_cpf->prox;
+			cont++;
+	    }
+ 	    if(veri==1)
+	    	printf("A posicao do paciente eh %d°\n",cont); 
+	    else 
+	    	printf("CPF invalido");
+	}
 
 }
 
 void listar_quantidade(Fila* f){
-	
+	Lista* t;
+	int cont=0;
+	t= f->ini;
+	while(t != NULL){
+		cont++;
+		t= t->prox;
+	}
+	printf("A quantidade de paciente eh %d\n", cont);
 }
 
 void menu(){
-	printf("1-Incluir paciente\n");
-	printf("2-Realizar chamada\n");
-	printf("3-Consultar a posição atual de um paciente\n");
-	printf("4-Listar a quantidade de pacientes atendidos\n");
-	printf("5-Sair");
+	printf("Questao 3 - Controle de ordem de chegada ");
+	printf("\n\n1 - Incluir paciente\n");
+	printf("2 - Realizar chamada\n");
+	printf("3 - Consultar a posicao atual de um paciente\n");
+	printf("4 - Listar a quantidade de pacientes atendidos\n");
+	printf("\n5 - Sair\n");
 }

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "livros.h"
 #include <locale.h>
+
 int main()
 {
 	int op, b;
@@ -11,7 +12,7 @@ int main()
 	do{
 		system("CLS");
 		menu();
-		printf("\nDigite uma das opções acima: ");
+		printf("\nDigite uma das opcoes acima: ");
 		scanf("%d", &op);
 		switch(op)
 		{
@@ -23,13 +24,13 @@ int main()
 	    case 2:
 	    	b= pilha_pop(p);
 	    	if (b==NULL)
-	    		printf("Não possui livro na pilha.\n");
+	    		printf("Nao possui livro na pilha.");
 	    	else
-	    		printf("Livro com o código %d foi removido.\n", b);
+	    		printf("Livro com o codigo %d foi removido", b);
 	    	system("PAUSE");
 			break;
 		case 3:
-			printf("O livro que está no topo é: \n");
+			printf("O livro que esta no topo:\n");
 			pilha_busca(p);
 			system("PAUSE");
 			break;

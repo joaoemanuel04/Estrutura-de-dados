@@ -12,25 +12,28 @@ int main()
 	do{
 		system("CLS");
 		menu();
-		printf("\nDigite uma das opções acima: ");
+		printf("\nDigite uma das opcoes acima: ");
 		scanf("%d", &op);
 		switch(op)
 		{
 		case 1:
-			f= fila_insere(f);
+			printf("Digite o CPF do paciente: ");
+			getchar();
+			scanf("%[^\n]", cpf);
+			fila_insere(f, cpf);
 			printf("Paciente inserido com sucesso. ");
 			system("PAUSE");
 			break;
 	    case 2:
 	    	p= chamar_paciente(f);
 			if (p==NULL)
-				printf("Não tem paciente para realizar consulta");
+				printf("Nao existe paciente cadastrado para realizar consulta!");
 			else 
-				printf("Chamando paciente: %s\n", p);
+				printf("\nChamando paciente: %s\n", p);
 			system("PAUSE");
 			break;
 		case 3:
-			printf("Digite o cpf do cliente que deseja consultar a possição: ");
+			printf("Digite o CPF do paciente que deseja consultar a posicao: ");
 			getchar();
 			scanf("%[^\n]", cpf);
 			consultar_posicao(f, cpf);

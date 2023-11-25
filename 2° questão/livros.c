@@ -28,7 +28,7 @@ Pilha* pilha_cria(void){
 Pilha* pilha_push(Pilha* pil){
 	Livro* lvro;
 	lvro= (Livro*)malloc(sizeof(Livro));
-	printf("Digite o código do livro: ");
+	printf("Digite o codigo do livro: ");
 	scanf("%d", &lvro->codigo);
 	printf("Digite o titulo do livro: ");
 	getchar();
@@ -62,10 +62,10 @@ int pilha_pop(Pilha* p){
 
 void pilha_busca(Pilha* p){
 	if(pilha_vazia(p)){
-		printf("Não possui livros.\n ");
+		printf("Nao possui livros.\n ");
 	}
 	else
-		printf("Código: %d\nTitulo: %s\nAutor: %s\n", p->prim->info->codigo, p->prim->info->titulo, p->prim->info->autor);
+		printf("Codigo: %d\nTitulo: %s\nAutor: %s\n", p->prim->info->codigo, p->prim->info->titulo, p->prim->info->autor);
 }
 
 int pilha_vazia(Pilha* p){
@@ -73,9 +73,10 @@ int pilha_vazia(Pilha* p){
 }
 
 void menu(){
-	printf("1-Inserir elemento\n");
+	printf("Questao 2 - Pilha de Livros\n");
+	printf("\n1-Inserir elemento\n");
 	printf("2-Remover elemento\n");
 	printf("3-Busca elemento do topo\n");
-	printf("4-Sair");
+	printf("\n4-Sair\n");
 }
 
